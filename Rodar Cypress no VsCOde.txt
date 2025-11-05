@@ -1,0 +1,8 @@
+*Criar pasta no Windows (cypress-iniciante) / abrir ela no VsCode
+Abrir terminal no VSCOde
+*npm init - y (apresenta o package.json / gerenciamento de dependencias)
+*npm install cypress (apresenta o package-lock.json e node_modules)
+*npx cypress install  (iniciar o cypress dentro do projeto)
+*npx cypress install --force 
+*npx cypress verify (verifica se foi instalado com sucesso)
+*
