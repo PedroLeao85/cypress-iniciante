@@ -5,4 +5,4 @@ Abrir terminal no VSCOde
 *npx cypress install  (iniciar o cypress dentro do projeto)
 *npx cypress install --force 
 *npx cypress verify (verifica se foi instalado com sucesso
-*
+*npx cypress open (abrir pela primeira vez)
