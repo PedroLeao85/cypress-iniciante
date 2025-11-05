@@ -4,5 +4,5 @@ Abrir terminal no VSCOde
 *npm install cypress (apresenta o package-lock.json e node_modules)
 *npx cypress install  (iniciar o cypress dentro do projeto)
 *npx cypress install --force 
-*npx cypress verify (verifica se foi instalado com sucesso)
+*npx cypress verify (verifica se foi instalado com sucesso
 *
