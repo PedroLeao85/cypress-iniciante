@@ -1,0 +1,12 @@
+Para pesquisar por Id coloca-se uma # na frente do nome do id
+#btnLogin
+
+Para pesquisar pela Class coloca-se um . na frente do nome
+.theme-btn-one.btn-black-overlay.btn_md
+
+Montando um caminho para o elemento
+clicar com o botão direto no elemento
+copy
+copy selector
+colar
+Ele seleciona a melhor opção para identificador unico do elemento
