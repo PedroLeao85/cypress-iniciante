@@ -5,7 +5,8 @@ describe('Login', () => {
             .get('.header-logo')
 
         cy.get('#top_header').as('cabecalho')
-            .contains('Login')    
+            .contains('Login')
+            .click()    
 
         cy.get('#top_header')
            .find('.fa-user')
