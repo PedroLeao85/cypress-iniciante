@@ -27,6 +27,13 @@ describe('Interacoes', () => {
         //simular apertar enter
         cy.get('.form-control').type('pedro@hotmail.com{enter}')
 
+    })
+
+    it.only('Select', () => {
+        cy.visit('/')
+        
+        cy.get('.footer_one_widget').contains('Checkout View Two').click()
+        cy.get('#country').select('Colombia')       
 
     })
 })
