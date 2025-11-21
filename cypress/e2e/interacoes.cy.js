@@ -1,6 +1,6 @@
-describe('Get Texts', () => {
+describe('Interacoes', () => {
 
-    it('Obter texto de um elemento', () => {
+    it('Digitar em um campo', () => {
         cy.visit('/')
             .get('.header-logo')
 
@@ -12,4 +12,3 @@ describe('Get Texts', () => {
 
 })
 
-// then - para trabalhar com o elemento selecionado
