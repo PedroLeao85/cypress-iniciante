@@ -10,3 +10,4 @@ copy
 copy selector
 colar
 Ele seleciona a melhor opção para identificador unico do elemento
+

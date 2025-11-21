@@ -4,11 +4,7 @@ describe('Get Texts', () => {
         cy.visit('/')
             .get('.header-logo')
 
-        cy.get('.top_header_left > p')
-            .then((element) => {
-                console.log(element.text())
-                //element.hide()
-            })    
+       cy.get('.form-control').type('pedro@hotmail.com')
 
         
     })
