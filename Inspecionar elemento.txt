@@ -11,3 +11,8 @@ copy selector
 colar
 Ele seleciona a melhor opção para identificador unico do elemento
 
+Linhas de código
+Ctrl + K + C   → comentar
+Ctrl + K + U   → descomentar
+
+
