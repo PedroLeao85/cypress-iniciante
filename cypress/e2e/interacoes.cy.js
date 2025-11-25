@@ -29,11 +29,21 @@ describe('Interacoes', () => {
 
     })
 
-    it.only('Select', () => {
+    it('Select', () => {
         cy.visit('/')
         
         cy.get('.footer_one_widget').contains('Checkout View Two').click()
         cy.get('#country').select('Colombia')       
 
     })
+
+    it.only('Checkbox e radio button', () => {
+        cy.visit('/')
+
+        cy.get('.footer_one_widget').contains('Checkout View One').click()
+        cy.get('#materialUnchecked').check().uncheck()
+        
+        cy.get('#css').check()
+
+    })    
 })
