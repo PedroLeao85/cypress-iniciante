@@ -4,7 +4,7 @@ describe('Teste Automatizado', () => {
         cy.get('.right_list_fix > li:nth-child(1) > a:nth-child(1)').click();
         cy.get('#user').click();
         cy.get('#password').click();
-        cy.get('#user').type('pedro.leao@primeresults.com.br').as ('email');
+        cy.get('#user').type('pedro.leao@123.com.br').as ('email');
         cy.get('#password').type('123456');
         cy.get('#btnLogin').click();
         // cy.get('.swal2-confirm.swal2-styled').click();
@@ -21,7 +21,7 @@ describe('Teste Automatizado', () => {
             .then(($input) => {
                 console.log($input.text())
                 const valorEmail = $input.val();
-                if(valorEmail ===  'pedro.leao@primeresults.com.br'){
+                if(valorEmail ===  'pedro.leao@123.com.br'){
                     cy.log('O valor do campo de email está correto.');
                 }else{
                     cy.log('O valor do campo de email está incorreto.');

@@ -37,7 +37,7 @@ describe('Interacoes', () => {
 
     })
 
-    it.only('Checkbox e radio button', () => {
+    it('Checkbox e radio button', () => {
         cy.visit('/')
 
         cy.get('.footer_one_widget').contains('Checkout View One').click()
