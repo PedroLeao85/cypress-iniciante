@@ -9,7 +9,8 @@ describe('Asserts', () => {
             .should('be.visible')
             .click()
 
-        cy.get('.account_form > h3').should('be.visible')
+        cy.get('.account_form > h3')
+            .should('be.visible')
 
         cy.get('.account_form > h3')
             .should('contain', 'Login')
