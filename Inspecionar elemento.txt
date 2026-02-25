@@ -14,5 +14,8 @@ Ele seleciona a melhor opção para identificador unico do elemento
 Linhas de código
 Ctrl + K + C   → comentar
 Ctrl + K + U   → descomentar
+Ctrl + J vai para o terminal
+Shift + Alt + ↓   (duplica linha para baixo)
+Shift + Alt + ↑   (duplica linha para cima)
 
 

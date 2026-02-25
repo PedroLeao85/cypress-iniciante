@@ -147,7 +147,7 @@ describe('Cadastro de usuário', () =>{
 
     })
 
-    it('Cadastro realizado com sucesso', () => {
+    it.only('Cadastro realizado com sucesso', () => {
         // cy.visit('/')
         // cy.get('.fa-lock').click()
         // cy.get('#user').click().type('Pedro')
@@ -166,7 +166,7 @@ describe('Cadastro de usuário', () =>{
             .click()
             .get('#user').click().type(user_name)
             .get('#email').click().type(user_email)
-            .get('#password').click().type('123456')
+            .get('#password').click().type(user_password)
             .should('be.visible')     
 
         cy.get('#btnRegister')
