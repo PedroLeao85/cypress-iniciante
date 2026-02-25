@@ -150,7 +150,7 @@ describe('Cadastro de usuário', () =>{
 
     })
 
-    it.only('Cadastro realizado com sucesso', () => {
+    it('Cadastro realizado com sucesso', () => {
         // cy.visit('/')
         // cy.get('.fa-lock').click()
         // cy.get('#user').click().type('Pedro')
