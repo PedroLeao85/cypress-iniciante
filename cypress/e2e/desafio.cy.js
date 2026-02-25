@@ -1,10 +1,11 @@
 /// <reference types="cypress" />
 
+const user_data = require('../fixtures/desafio_valid_data.json')
+const user_invalid = require('../fixtures/desafio_invalid_data.json')
+
 describe('Cadastro de usuário', () =>{
 
-    const user_name = 'Pedro'
-    const user_email = 'pedro@123.com'
-    const user_password = '123456'
+   
 
     it('Validar campo nome vazio', () => {
         // cy.visit('/')
@@ -49,8 +50,8 @@ describe('Cadastro de usuário', () =>{
         
         cy.get('.fa-lock')
             .click()
-            .get('#user').click().type(user_name)
-            .get('#password').click().type(user_password)
+            .get('#user').click().type(user_data.name)
+            .get('#password').click().type(user_data.password)
             .should('be.visible')     
 
         cy.get('#btnRegister')
@@ -78,9 +79,9 @@ describe('Cadastro de usuário', () =>{
         
         cy.get('.fa-lock')
             .click()
-            .get('#user').click().type(user_name)
-            .get('#email').click().type('Pedro')
-            .get('#password').click().type(user_password)
+            .get('#user').click().type(user_data.name)
+            .get('#email').click().type(user_invalid.email)
+            .get('#password').click().type(user_data.password)
             .should('be.visible')     
 
         cy.get('#btnRegister')
@@ -108,8 +109,8 @@ describe('Cadastro de usuário', () =>{
         
         cy.get('.fa-lock')
             .click()
-            .get('#user').click().type(user_name)
-            .get('#email').click().type(user_email)
+            .get('#user').click().type(user_data.name)
+            .get('#email').click().type(user_data.email)
             .should('be.visible')     
 
         cy.get('#btnRegister')
@@ -134,9 +135,9 @@ describe('Cadastro de usuário', () =>{
         
         cy.get('.fa-lock')
             .click()
-            .get('#user').click().type(user_name)
-            .get('#email').click().type(user_email)
-            .get('#password').click().type('123')
+            .get('#user').click().type(user_data.name)
+            .get('#email').click().type(user_data.email)
+            .get('#password').click().type(user_invalid.password)
             .should('be.visible')     
 
         cy.get('#btnRegister')
@@ -147,7 +148,7 @@ describe('Cadastro de usuário', () =>{
 
     })
 
-    it.only('Cadastro realizado com sucesso', () => {
+    it('Cadastro realizado com sucesso', () => {
         // cy.visit('/')
         // cy.get('.fa-lock').click()
         // cy.get('#user').click().type('Pedro')
@@ -164,9 +165,9 @@ describe('Cadastro de usuário', () =>{
         
         cy.get('.fa-lock')
             .click()
-            .get('#user').click().type(user_name)
-            .get('#email').click().type(user_email)
-            .get('#password').click().type(user_password)
+            .get('#user').click().type(user_data.name)
+            .get('#email').click().type(user_data.email)
+            .get('#password').click().type(user_data.password)
             .should('be.visible')     
 
         cy.get('#btnRegister')
@@ -175,7 +176,7 @@ describe('Cadastro de usuário', () =>{
         cy.get('#swal2-title')
             .should('contain', 'Cadastro realizado!')      
             .get('#swal2-html-container')
-            .should('contain', `Bem-vindo ${user_name}`)
+            .should('contain', `Bem-vindo ${user_data.name}`)
     })
     
     
