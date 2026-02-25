@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import { faker } from '@faker-js/faker';
+
 const user_data = require('../fixtures/desafio_valid_data.json')
 const user_invalid = require('../fixtures/desafio_invalid_data.json')
 
@@ -148,7 +150,7 @@ describe('Cadastro de usuário', () =>{
 
     })
 
-    it('Cadastro realizado com sucesso', () => {
+    it.only('Cadastro realizado com sucesso', () => {
         // cy.visit('/')
         // cy.get('.fa-lock').click()
         // cy.get('#user').click().type('Pedro')
@@ -158,15 +160,18 @@ describe('Cadastro de usuário', () =>{
         // cy.get('#swal2-title')
         //     .should('contain', 'Cadastro realizado!')
         // cy.get('#swal2-html-container')
-        //     .should('contain', 'Bem-vindo Pedro')    
+        //     .should('contain', 'Bem-vindo Pedro')
+
+        const name = faker.person.fullName();  
+        const email = faker.internet.email(); 
 
         cy.visit('/')
              .get('.header-logo')
         
         cy.get('.fa-lock')
             .click()
-            .get('#user').click().type(user_data.name)
-            .get('#email').click().type(user_data.email)
+            .get('#user').click().type(name)
+            .get('#email').click().type(email)
             .get('#password').click().type(user_data.password)
             .should('be.visible')     
 
@@ -176,7 +181,7 @@ describe('Cadastro de usuário', () =>{
         cy.get('#swal2-title')
             .should('contain', 'Cadastro realizado!')      
             .get('#swal2-html-container')
-            .should('contain', `Bem-vindo ${user_data.name}`)
+            .should('contain', `Bem-vindo ${name}`)
     })
     
     
