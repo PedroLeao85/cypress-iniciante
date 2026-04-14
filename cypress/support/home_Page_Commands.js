@@ -1,11 +1,24 @@
 /// <reference types="cypress" />
 
+const elements = {
+    accesRegister : '.fa-lock',
+
+    fields:{
+        name: '#user'
+    }
+}
+
+
 Cypress.Commands.add('accesRegisterPage' , () =>{
+    //acessou aplicação
     cy.visit('/')
             .get('.header-logo')
 
-        cy.get('.fa-lock')
-            .click()
-            .get('#user')
-            .should('be.visible')
+    //entrou no registro        
+    cy.get(elements.accesRegister)
+        .click()
+
+    //verifica se esta na pagina de cadastro
+    cy.get(elements.fields.name)
+        .should('be.visible')
 })

@@ -1,37 +1,56 @@
 /// <reference types="cypress" />
 
+//Elementos
+const elements = {
+    buttons:{
+        register: '#btnRegister'
+    },
+    fields:{
+        name: '#user',
+        email: '#email',
+        password: '#password'
+    },
+    messages:{
+        error: '.errorLabel',
+        successTitle: '#swal2-title',
+        successSubtitle: '#swal2-html-container'
+    }
+}
+
+
+//Ações/métodos/funções
 Cypress.Commands.add('saveRegister' , () =>{
-    cy.get('#btnRegister')
+    cy.get(elements.buttons.register)
             .click()
 })
 
 
 Cypress.Commands.add('fillName' , (name) =>{
-    cy.get('#user')
+    cy.get(elements.fields.name)
         .type(name)
 })
 
 Cypress.Commands.add('fillEmail' , (email) =>{
-    cy.get('#email')
+    cy.get(elements.fields.email)
         .should('be.visible')
         .type(email)
 })
 
 Cypress.Commands.add('fillPassword' , (senha) =>{
-    cy.get('#password')
+    cy.get(elements.fields.password)
         .should('be.visible')
         .type(senha)
 })
 
 Cypress.Commands.add('checkMessage' , (mensagem) =>{
-    cy.get('.errorLabel')
+    cy.get(elements.messages.error)
             .should('have.text', mensagem)
 })
 
 Cypress.Commands.add('checkRegisterSuccess' , (name) =>{
-    cy.get('#swal2-title')
+    cy.get(elements.messages.successTitle)
             .should('contain', 'Cadastro realizado!')
 
-    cy.get('#swal2-html-container', {timeout: 3000})
+    cy.get(elements.messages.successSubtitle, {timeout: 3000})
             .should('contain', `Bem-vindo ${name}`)        
 })
